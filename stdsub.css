@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#titlehead {
+    color: #F4F0ED;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    margin: 0 0 -23.2px 0;
+    text-align: center;
+}
+
+header {
+    margin: 0 16px 32px 16px;
+}
+
+#artimg {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+
+#artname {
+    color: #F4F0ED;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+#dimen {
+    color: #F4F0ED;
+    font-size: 12px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 2px 0;
+}
+
+#artist {
+    color: #1A1A1A;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+#progress {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #1a1a1a;
+    cursor: pointer;
+    margin: 0;
+}
+
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: black;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.controlic {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #CCCAC6;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: -12px;
+}
+
+.controlic div {
+    width: 40px;
+    height: 40px;
+    padding: 00px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: scale(1);
+    color:black;
+    margin: 16px;
+}
+
+#playicon{
+    background-color: black;
+    color:white;
+}
+
+.controls div:nth-child(2) {
+    transform: scale(1.5);
+}
+
+#read {
+    color: #1A1A1A;
+    font-size: 12px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    text-align: left;
+}
+
+#cnote {
+    color: #1A1A1A;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    text-align: left;
+}
+
+#credit {
+    color: #1A1A1A;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    text-align: right;
+}

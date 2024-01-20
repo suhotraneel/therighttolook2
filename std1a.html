@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stdsub.css">
+    <script src="https://kit.fontawesome.com/a3ffbb974d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <title>IDENTITY - Saloni Doshi Collection</title>
+</head>
+<body>
+    <div id="artback" style="background-image: url('images/std1a.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-position: center;">
+        <div style="background-color: #1a1a1abf;">
+        <div style="padding: 32px 16px 32px 16px;">
+            <header>
+                <p id="titlehead">A Light Through The Cracks</p>
+                <a href="std1.html" id="backl"><div style="display: flex; align-content: center; height: 23.2px;"><img src="back.svg" alt="back"></div></a>
+            </header>
+            
+            <img id="artimg" src="images/std1a.jpg">
+            <div style="display: flex; align-items: center ; justify-content: space-between; margin: 32px 16px 4px 16px;">
+                <a href="std1m.html" id="prevl"><img src="previous.svg" alt="previous"></a>
+                <p id="artname">Circus, 2015</p>
+                <a href="std1b.html" id="nextl"><img src="next.svg" alt="next"></a>
+            </div>
+            <p id="dimen">10 x 15 in</p>
+        </div>
+        <div style="padding: 32px; background-color: #F4F0ED; border-radius: 16px 16px 0 0;">
+            <div class="controlic">
+                <div id="playicon" onClick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                <p id="artist">MADIHA AIJAZ</p>
+            </div>
+            <input type="range" value="0" id="progress">
+            <audio id="song">
+                <source src="audios/std1a.mp3" id="artaud" type="audio/mpeg">
+            </audio> 
+
+            <!-- <div style="margin-top: 48px;">
+                <p id="read">Read Instead</p>
+                <p id="cnote">
+                    A photograph is a mediated magic; it does not simply lend us a vision into a moment in time that has been lost to history, but also broadens our perspective about how an event could be. Photography is inspirational, as well as aspirational, and the story of Indian photography shall remain incomplete without such ambitions, such yearnings that introduce to the world our desires, our objectives, our identities – of who we are, and perhaps, who we want to be.
+                </p>
+                <p id="credit">- Shankar Tripathi</p>
+            </div> -->
+            
+            <div style="margin-top: 48px; text-align: center;">
+                <img src="logo.png" alt="Saloni Doshi Collection" style="height: 35px">
+            </div>
+        </div>
+        </div>
+        
+    </div>
+    <script>
+        ArtBack = document.querySelector('#artback')
+        ArtBack.style.backgroundImage = "url('images/std1a.jpg')"
+
+        ArtImage = document.querySelector('#artimg')
+        ArtImage.src = "images/std1a.jpg"
+
+        ArtAudio = document.querySelector('#artaud')
+        ArtAudio.src = "audios/std1a.mp3"
+
+        Prev = document.querySelector('#prevl')
+        Prev.href = "std1m.html"
+
+        Next = document.querySelector('#nextl')
+        Next.href = "std1b.html"
+
+        Back = document.querySelector('#backl')
+        Back.href = "std1.html"
+
+        StudioName = document.querySelector('#titlehead')
+        StudioName.innerHTML = "The Promised Land"
+
+        ArtName = document.querySelector('#artname')
+        ArtName.innerHTML = "Musica Universalis, 2017"
+
+        DimenValue = document.querySelector('#dimen')
+        DimenValue.innerHTML = "23.6 x 20.3 in"
+
+        ArtistName = document.querySelector('#artist')
+        ArtistName.innerHTML = "Anirudh Acharya"
+
+        ConceptNote = document.querySelector('#cnote')
+        ConceptNote.innerHTML = "Anirudh Acharya"
+    </script>
+    <script>
+        let progress = document.getElementById("progress");
+        let song = document.getElementById("song");
+        let ctrlIcon = document.getElementById("ctrlIcon");
+
+        song.onloadedmetadata = function(){
+            progress.max = song.duration;
+            progress.value = song.currentTime;
+
+        }
+
+        function playPause() {
+            if(ctrlIcon.classList.contains("fa-pause")) {
+                song.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+            }
+            else{
+                song.play();
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+            }
+        }
+
+        if(song.play()) {
+            setInterval(()=>{
+                progress.value = song.currentTime;
+            },500);
+        }
+
+        progress.onchange = function(){
+            song.play();
+            song.currentTime = progress.value;
+            ctrlIcon.classList.add("fa-pause");
+            ctrlIcon.classList.remove("fa-play");
+        }
+
+    </script>
+</body>
+</html>

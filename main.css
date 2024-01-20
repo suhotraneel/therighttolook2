@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body{
+    margin: 0;
+    background-color: #1a1a1a;
+}
+
+.boxes{
+    padding-top: 48px;
+}
+
+h1{
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 24px;
+    color: #F4F0ED;
+    margin: 0;
+}
+
+h2{
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 4px;
+    color: #F4F0ED;
+    margin: 0;
+}
+
+h3{
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+    color: #F4F0ED;
+    margin: 0;
+}
+
+h4{
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    text-align: left;
+    color: #F4F0ED;
+    margin: 0;
+}
+
+p{
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: white;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-align: center;
+}
+
+span{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a3ffbb974d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <title>The Promised Land - Saloni Doshi Collection</title>
+</head>
+<body>
+    <header>
+        <p id="titlehead">The Right To Look - II</p>
+        <a href="content.html" id="backl"><div style="display: flex; align-content: center; height: 23.2px;"><img src="back.svg" alt="back"></div></a>
+    </header>
+    <div style="background-image: url('images/std1.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; border-radius: 8px;">
+    <div style="background-color: rgba(0, 2, 64, .75); padding: 32px; border-radius: 8px;">
+        <h1>The Promised Land</h1>
+        <div style="display: flex; align-items: center ; justify-content: center; margin-top: 2px;">
+            <a href="std5.html" id="prevl"><img src="previous.svg" style="margin-right: 16px; opacity: 0.75;" alt="previous"></a>
+            <p id="artname">Studio 1</p>
+            <a href="std2.html" id="nextl"><img src="next.svg"  style="margin-left: 16px; opacity: 0.75;" alt="next"></a>
+        </div>
+        <div class="controlic">
+            <div id="playicon" onClick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+            <input type="range" value="0" id="progress">
+        </div>
+        <audio id="song">
+            <source src="audios/std1.mp3" id="artaud" type="audio/mpeg">
+        </audio>
+    </div>
+    </div>
+    <div class="photo-gallery">
+    <div class="column">
+        <div class="photo">
+            <a href="std1a.html"><img src="images/std1a.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1c.html"><img src="images/std1c.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1e.html"><img src="images/std1e.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1g.html"><img src="images/std1g.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1i.html"><img src="images/std1i.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1k.html"><img src="images/std1k.jpg"></a>
+        </div>
+    </div>
+    <div class="column">
+        <div class="photo">
+            <a href="std1b.html"><img src="images/std1b.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1d.html"><img src="images/std1d.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1f.html"><img src="images/std1f.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1h.html"><img src="images/std1h.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1j.html"><img src="images/std1j.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1l.html"><img src="images/std1l.jpg"></a>
+        </div>
+        <div class="photo">
+            <a href="std1m.html"><img src="images/std1m.jpg"></a>
+        </div>
+    </div>
+    </div>
+    <div style="margin-top: 48px; text-align: center;">
+        <img src="logowhite.png" alt="Saloni Doshi Collection" style="height: 35px">
+    </div>
+
+    <script>
+        let progress = document.getElementById("progress");
+        let song = document.getElementById("song");
+        let ctrlIcon = document.getElementById("ctrlIcon");
+
+        song.onloadedmetadata = function(){
+            progress.max = song.duration;
+            progress.value = song.currentTime;
+
+        }
+
+        function playPause() {
+            if(ctrlIcon.classList.contains("fa-pause")) {
+                song.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+            }
+            else{
+                song.play();
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+            }
+        }
+
+        if(song.play()) {
+            setInterval(()=>{
+                progress.value = song.currentTime;
+            },500);
+        }
+
+        progress.onchange = function(){
+            song.play();
+            song.currentTime = progress.value;
+            ctrlIcon.classList.add("fa-pause");
+            ctrlIcon.classList.remove("fa-play");
+        }
+
+    </script>
+</body>
+</html>
